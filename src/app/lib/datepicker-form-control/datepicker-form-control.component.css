@@ -1,0 +1,21 @@
+[popover]:popover-open {
+  /* transform: scaleY(1); */
+  /* transform-origin: bottom; */
+}
+
+[popover] {
+  border: none;
+  /* Final state of the exit animation */
+  /* transform: scaleY(0); */
+
+  /* transition: transform .3s allow-discrete; */
+}
+
+@starting-style {
+  [popover]:popover-open {
+    /* transform: scaleY(0); */
+  }
+}
+:host{
+--mdc-elevated-card-container-shape: 0 0 12px;
+}

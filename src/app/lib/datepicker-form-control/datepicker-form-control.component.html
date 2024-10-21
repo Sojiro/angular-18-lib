@@ -1,1 +1,24 @@
-<p>datepicker-form-control works!</p>
+<div style="position: relative; width: 300px">
+  <mat-form-field
+    appearance="fill"
+    style="width: 100%"
+    subscriptSizing="dynamic"
+    (click)="toggleCalendar()"
+  >
+    <mat-label>Due Date</mat-label>
+    <input matInput placeholder="Due Date" [value]="displayDate()" />
+    <button mat-icon-button matSuffix>
+      <mat-icon>calendar_month</mat-icon>
+    </button>
+  </mat-form-field>
+  @if(showCalendar()){
+  <mat-card style="position: absolute; width: 100%">
+    <mat-calendar
+      [headerComponent]="exampleHeader"
+      [(selected)]="selected"
+      (selectedChange)="toggleCalendar()"
+      (viewChanged)="loadWeeks()"
+    />
+  </mat-card>
+  }
+</div>
